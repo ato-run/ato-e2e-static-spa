@@ -1,12 +1,12 @@
 // Client-side pathname router. Reloading /deep-link directly verifies the
 // host's SPA fallback (unknown paths must serve index.html).
 import "./style.css";
-const ROUTES = { "/": "home", "/deep-link": "deep-link" };
+const ROUTES = { "/": "home", "/deep-link": "deep-link", "/deep-link-v2": "deep-link-v2" };
 function render() {
   const path = location.pathname;
   const label = ROUTES[path] ?? "not-found";
   document.querySelector('[data-testid="fixture-route"]').textContent = path;
-  document.title = `Static fixture v1 — ${label}`;
+  document.title = `Static fixture v2 — ${label}`;
 }
 document.addEventListener("click", (event) => {
   const a = event.target.closest("a[data-link]");
