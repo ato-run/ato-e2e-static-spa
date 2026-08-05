@@ -1,6 +1,12 @@
 // Zero-dependency static server for dist/ with SPA fallback — satisfies the
 // detector's scripts.start requirement while keeping the app fully static.
 import { createServer } from "node:http";
+import { cpSync, rmSync, mkdirSync } from "node:fs";
+// Build at boot so scripts.start stays a single plain argv (detector
+// contract: no shell syntax like "a && b" in start/dev).
+rmSync("dist", { recursive: true, force: true });
+mkdirSync("dist", { recursive: true });
+cpSync("src", "dist", { recursive: true });
 import { readFileSync, existsSync } from "node:fs";
 import { extname, join } from "node:path";
 const PORT = Number(process.env.PORT || 8080);
