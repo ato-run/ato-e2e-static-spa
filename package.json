@@ -2,9 +2,13 @@
   "name": "ato-e2e-static-spa",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "node build.mjs",
-    "start": "node serve.mjs",
-    "dev": "node serve.mjs"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.1.11"
   }
 }

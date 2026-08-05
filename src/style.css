@@ -1,0 +1,5 @@
+body { font-family: system-ui, sans-serif; background: #10314f; color: #f2f7fc;
+       display: grid; place-items: center; min-height: 100vh; margin: 0; }
+main { text-align: center; }
+code { background: rgba(255,255,255,.12); padding: 2px 8px; border-radius: 6px; }
+nav a { color: #8fd0ff; margin: 0 8px; }
